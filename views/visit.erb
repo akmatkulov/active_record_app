@@ -9,22 +9,22 @@
     <form method="post" action="/visit">
         <table border="1px">
           <tr>
-            <td><label for="name"><b>Your Name:</b></label></td>
-            <td><input type="text" name="name" ></td>
+            <td><label for="client[name]"><b>Your Name:</b></label></td>
+            <td><input type="text" name="client[name]" ></td>
           </tr>
           <tr>
-            <td><label for="phone_number"><b>Phone number:</b></label></td>
-            <td><input type="text" name="phone_number" ></td>
+            <td><label for="client[phone]"><b>Phone number:</b></label></td>
+            <td><input type="text" name="client[phone]" ></td>
           </tr>
           <tr>
-            <td><label for="date_time"><b>Date and Time:</b></label></td>
-            <td><input id="datetimepicker" type="text" name="date_time" ></td>
+            <td><label for="client[date_stamp]"><b>Date and Time:</b></label></td>
+            <td><input id="datetimepicker" type="text" name="client[date_stamp]" ></td>
           </tr>
           <tr>
             <td><label for="barber"><b>Barber:</b></label></td>
             <td>
             
-            <select name="barber">
+            <select name="client[barber]">
             <% @barbers.each do |item| %>
                 <option><%= item.name %></option>
                 <% end %>
@@ -35,7 +35,7 @@
           <tr>
             <td><label for="color"><b>Color:</b></label></td>
             <td>
-            <select id="colorpic" name="color">
+            <select id="colorpic" name="client[color]">
                 <option value="#7bd148">Green</option>
                 <option value="#5484ed">Bold blue</option>
                 <option value="#46d6db">Turquoise</option>

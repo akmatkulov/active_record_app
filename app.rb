@@ -27,13 +27,7 @@ end
 
 # Отправить данные
 post '/visit' do
-  users = Client.new
-  users.name = params[:name]
-  users.phone = params[:phone_number]
-  users.date_stamp = params[:date_time]
-  users.barber = params[:barber]
-  users.color = params[:color]
+  users = Client.new params[:client]
   users.save
-
   erb :visit
 end
