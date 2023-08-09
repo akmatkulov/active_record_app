@@ -40,3 +40,19 @@ post '/visit' do
     erb :visit
   end
 end
+
+get '/show' do
+  @users = Client.order('created_at DESC')
+  erb :show
+end
+
+get '/barber/:id' do
+  @barber = Barber.find(params[:id])
+  erb :barber
+end
+
+get '/client/:id' do
+  @client = Client.find(params[:id])
+  erb :client
+end
+
