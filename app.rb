@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# frozen_string_literal: true 
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
@@ -14,6 +13,7 @@ class Barber < ActiveRecord::Base
 end
 
 get '/' do 
-  erb "hello"
+  @barbers = Barber.order 'created_at DESC'
+  erb :index
 end 
 
